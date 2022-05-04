@@ -1,11 +1,11 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 
-import ProductsList from '../../components/ProductsList';
-import Loader from '../../components/Loader';
+import ProductsList from '../../PureComponents/Body/ProductsList';
+import Loader from '../../PureComponents/Loader';
 
 import styles from './Category.module.css';
 
-class Category extends Component {
+class Category extends PureComponent {
   componentDidMount() {
     document.title = 'Category | Scandiweb Dev Test';
   }

@@ -1,9 +1,9 @@
-import { Component } from 'react';
-import CartProduct from '../../components/CartProduct';
+import { PureComponent } from 'react';
+import CartProduct from '../../PureComponents/Body/CartProduct/CartProduct';
 
 import styles from './Cart.module.css';
 
-class Cart extends Component {
+class Cart extends PureComponent {
   componentDidMount() {
     document.title = 'Cart | Scandiweb Dev Test';
   }

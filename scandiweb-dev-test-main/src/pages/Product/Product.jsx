@@ -1,16 +1,16 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { withRouter } from 'react-router-dom';
 import { graphql } from '@apollo/client/react/hoc';
 import { gql } from '@apollo/client';
 
-import SingleProduct from '../../components/SingleProduct';
-import Loader from '../../components/Loader';
+import SingleProduct from '../../PureComponents/Body/SingleProduct/SingleProduct';
+import Loader from '../../PureComponents/Loader';
 
 import styles from './Product.module.css';
 
-class Product extends Component {
+class Product extends PureComponent {
   componentDidMount() {
-    document.title = 'Product | Scandiweb Dev Test';
+    document.title = 'Product | Scandiweb Junior Dev Test II';
   }
 
   render() {

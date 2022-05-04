@@ -1,13 +1,13 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import parse from 'html-react-parser';
 
-import { addProductSuccess } from '../../redux/cart/cart_action';
+import { addProductSuccess } from '../../../redux/cart/cart_action';
 
 import styles from './SingleProduct.module.css';
 
-class SingleProduct extends Component {
+class SingleProduct extends PureComponent {
   state = {
     cover: '',
   };

@@ -8,7 +8,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import store from './redux/store';
 
 import App from './App';
-import Loader from './components/Loader';
+import Loader from './PureComponents/Loader';
 
 import './styles/normalizer.css';
 import './fonts/fonts.css';
@@ -31,5 +31,6 @@ ReactDOM.render(
       </Provider>
     </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
+// export { default } from './Container';

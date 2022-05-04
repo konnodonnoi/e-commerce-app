@@ -1,4 +1,4 @@
-import { Component, createRef } from 'react';
+import { PureComponent, createRef } from 'react';
 import { graphql } from '@apollo/client/react/hoc';
 import { gql } from '@apollo/client';
 
@@ -28,7 +28,7 @@ const options = [
   },
 ];
 
-class CurrencySwitcher extends Component {
+class CurrencySwitcher extends PureComponent {
   container = createRef();
 
   state = {
@@ -95,7 +95,7 @@ class CurrencySwitcher extends Component {
                   key={item.value}
                   data={item.value}
                   title={item.label}
-                  onClick={this.hadleListItemClick}
+                  onClick={this.handleListItemClick}
                 >
                   {item.label}
                 </li>

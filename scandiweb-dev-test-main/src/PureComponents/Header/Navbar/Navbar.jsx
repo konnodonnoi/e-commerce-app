@@ -1,11 +1,12 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
+import CurrencySwitcher from '../CurrencySwitcher';
+import CartPreview from '../../Body/CartPreview/CartPreview';
+import styles from '../Navbar/navbar.module.css';
 import { NavLink } from 'react-router-dom';
+import { ReactComponent as LogoImage } from '../../../images/logo.svg';
+import routes from '../../../routes';
 
-import styles from './Navigation.module.css';
-
-import routes from '../../routes';
-
-class Navigation extends Component {
+class Navigation extends PureComponent {
   render() {
     const categories = this.props.categories;
 
@@ -40,6 +41,28 @@ class Navigation extends Component {
       </ul>
     );
   }
+};
+
+class Logo extends PureComponent {
+  render() {
+    return <LogoImage className={styles.logo} title="Logo" alt="Logo" />;
+  }
+};
+
+
+class Header extends PureComponent {
+  render() {
+    return (
+      <header className={styles.header}>
+        <Navigation categories={this.props.categories} />
+        <Logo />
+        <div className={styles.wrapper}>
+          <CurrencySwitcher />
+          <CartPreview />
+        </div>
+      </header>
+    );
+  }
 }
 
-export default Navigation;
+export default Header;

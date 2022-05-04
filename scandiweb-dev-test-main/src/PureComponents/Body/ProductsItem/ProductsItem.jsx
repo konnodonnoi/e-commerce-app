@@ -1,14 +1,14 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
-import { addProductSuccess } from '../../redux/cart/cart_action';
+import { addProductSuccess } from '../../../redux/cart/cart_action';
 
 import styles from './ProductsItem.module.css';
 
-import { ReactComponent as EmpryCart } from '../../images/empty-cart.svg';
+import { ReactComponent as EmpryCart } from '../../../images/empty-cart.svg';
 
-class ProductsItem extends Component {
+class ProductsItem extends PureComponent {
   addToCart = product => {
     this.props.dispatchToCart(product);
 

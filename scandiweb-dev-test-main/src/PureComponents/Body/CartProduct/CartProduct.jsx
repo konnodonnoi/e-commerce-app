@@ -1,11 +1,11 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
-import { getProducts } from '../../redux/cart/cart_selector';
+import { getProducts } from '../../../redux/cart/cart_selector';
 
 import styles from './CartProduct.module.css';
 
-class CartProduct extends Component {
+class CartProduct extends PureComponent {
   state = {
     quantity: 1,
   };

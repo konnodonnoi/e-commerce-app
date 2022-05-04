@@ -1,19 +1,19 @@
-import { Component, createRef } from 'react';
+import { PureComponent, createRef } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getProducts, getTotalPrice } from '../../redux/cart/cart_selector';
+import { getProducts, getTotalPrice } from '../../../redux/cart/cart_selector';
 
 import styles from './CartPreview.module.css';
 
-import { ReactComponent as CartImage } from '../../images/cart.svg';
-import { ReactComponent as ArrowImage } from '../../images/arrow-up.svg';
+import { ReactComponent as CartImage } from '../../../images/cart.svg';
+import { ReactComponent as ArrowImage } from '../../../images/arrow-up.svg';
 
-import routes from '../../routes';
+import routes from '../../../routes';
 
 const body = document.querySelector('body');
 
-class CartPreview extends Component {
+class CartPreview extends PureComponent {
   container = createRef();
   backdrop = createRef();
 
@@ -181,7 +181,7 @@ class CartPreview extends Component {
               <div className={styles.total}>
                 <span className={styles.total__text}>Total</span>
                 <span className={styles.total__price}>
-                  ${totalPrice.toFixed(2)}
+                  ${totalPrice.toFixed(0)}
                 </span>
               </div>
 

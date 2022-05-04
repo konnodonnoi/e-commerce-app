@@ -1,12 +1,11 @@
-import { Component } from 'react';
+import { PureComponent, } from 'react';
 import { graphql } from '@apollo/client/react/hoc';
 import { gql } from '@apollo/client';
 import { Suspense, lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
-
-import Container from './components/Container';
-import AppBar from './components/AppBar';
-import Loader from './components/Loader';
+import Container from './PureComponents/Body/Container';
+import Navbar from './PureComponents/Header/Navbar/Navbar';
+import Loader from './PureComponents/Loader';
 
 import './App.css';
 
@@ -26,10 +25,11 @@ const Checkout = lazy(() =>
   import('./pages/Checkout' /* webpackChunkName: "checkout-page" */),
 );
 
-class App extends Component {
+class App extends PureComponent {
   render() {
     const { data } = this.props;
     const { error, loading } = data;
+    // const [cartItems, setCartItems] = useState([]);
 
     const all = data?.categories?.reduce((acc, item) => {
       acc.push(...item.products);
@@ -38,7 +38,7 @@ class App extends Component {
 
     return (
       <Container>
-        <AppBar categories={data.categories} />
+        <Navbar categories={data.categories} />
 
         <Suspense fallback={<Loader />}>
           <Switch>
@@ -79,11 +79,11 @@ class App extends Component {
                 );
               })}
 
-            <Route exact path="/cart">
+            <Route exact path="/Cart">
               <Cart />
             </Route>
 
-            <Route exact path="/checkout">
+            <Route exact path="/Checkout">
               <Checkout />
             </Route>
           </Switch>

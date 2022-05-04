@@ -1,9 +1,9 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import ProductsItem from '../ProductsItem';
 
 import styles from './ProductsList.module.css';
 
-class ProductsList extends Component {
+class ProductsList extends PureComponent {
   render() {
     const products = this.props.products;
     const categoryName = this.props.category;
